@@ -13,6 +13,9 @@ import OrderModule from './features/orders/order.module';
 import { MailModule } from './core/mail/mail.module';
 import AuthenticationModule from './features/authentication/authentication.module';
 import {ScheduleModule} from "@nestjs/schedule"
+import CommonsModule from './features/commons/commons.module';
+import ProductModule from './features/production/product.module';
+import ArticulModule from './features/articuls/articul.module';
 
 
 @Module({
@@ -29,6 +32,9 @@ import {ScheduleModule} from "@nestjs/schedule"
     StaticModule,
     OrderModule,
     MailModule,
+    CommonsModule,
+    ProductModule,
+    ArticulModule
   ],
 })
 export class AppModule {}

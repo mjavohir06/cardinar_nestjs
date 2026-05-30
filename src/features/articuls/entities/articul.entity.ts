@@ -1,9 +1,9 @@
 import { BaseModel } from "src/core/base-model.entity";
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
-import { ProductEntity } from "../../production/entities/products/product.entity";
+import { ProductEntity } from "../../production/entities/product.entity";
 import { CarModelEntity } from "./carModel.entity";
-import { CartItemEntity } from "src/features/production/entities/products/cartItem.entity";
 import { OrderItemEntity } from "src/features/orders/entities/orderItem.entity";
+import { CartItemEntity } from "@/features/production/entities/cartItem.entity";
 
 
 

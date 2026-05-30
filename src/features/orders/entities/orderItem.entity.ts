@@ -1,7 +1,7 @@
 import { BaseModel } from "src/core/base-model.entity"
 import { Column, Entity, JoinColumn, ManyToOne } from "typeorm"
 import { OrderEntity } from "./order.entity"
-import { ProductEntity } from "src/features/production/entities/products/product.entity"
+import { ProductEntity } from "@/features/production/entities/product.entity"
 import { ArticulEntity } from "src/features/articuls/entities/articul.entity"
 
 @Entity("orderItems")

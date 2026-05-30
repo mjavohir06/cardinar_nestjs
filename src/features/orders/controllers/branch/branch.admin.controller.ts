@@ -37,6 +37,6 @@ export class BranchAdminController {
 
     @Delete(":id")
     async delete(@Param("id") id:number){
-        return await this.service.baseDelete(id,message404)
+        return await this.service.baseDelete(id,message404,"branch")
     }
 }
