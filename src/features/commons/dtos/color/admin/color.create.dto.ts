@@ -1,5 +1,5 @@
 // BranchCreateDto
-import { IsString, MaxLength,  IsNotEmpty } from "class-validator";
+import { IsString, MaxLength,  IsNotEmpty, IsHexColor } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
 
 export class ColorCreateDto {
@@ -9,9 +9,7 @@ export class ColorCreateDto {
     @ApiProperty()
     title!: string
 
-    @IsString()
-    @IsNotEmpty()
-    @MaxLength(12)
+    @IsHexColor()
     @ApiProperty()
     color!:string
 

@@ -1,5 +1,5 @@
 // ImageUpdateDto
-import { IsInt, IsOptional } from "class-validator";
+import { Allow, IsInt, IsOptional } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
 import { Transform } from "class-transformer";
 
@@ -11,6 +11,7 @@ export class ImageUpdateDto {
     productId?: number
 
     @IsOptional()
+    @Allow()
     @ApiProperty({ type: "string", format: "binary", required: false })
     image?: string
 

@@ -26,7 +26,9 @@ export class ImageAdminService extends ServiceHelper<ImageEntity> {
         }
     }
     private isPic(image?:Express.Multer.File){
-        if(image && !image.path.startsWith("image")) throw new BadRequestException("Faqat rasm qabul qilinadi!")
+        console.log(image);
+        
+        if(image && !image.path.startsWith("uploads\\image")) throw new BadRequestException("Faqat rasm qabul qilinadi!")
     }
     
 

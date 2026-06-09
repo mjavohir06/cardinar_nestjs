@@ -1,4 +1,4 @@
-import { IsString, MaxLength,  IsNotEmpty, IsOptional } from "class-validator";
+import { IsString, MaxLength,  IsNotEmpty, IsOptional, IsHexColor } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
 
 export class ColorUpdateDto {
@@ -10,9 +10,7 @@ export class ColorUpdateDto {
     title?: string
 
     @IsOptional()
-    @IsString()
-    @IsNotEmpty()
-    @MaxLength(12)
+    @IsHexColor()
     @ApiProperty({required:false})
     color?:string
 }

@@ -39,8 +39,8 @@ export class ProductEntity extends BaseModel {
     @OneToMany(() => ArticulEntity, (articul) => articul.product)
     articuls?: ArticulEntity[]
 
-    @OneToMany(() => ColorEntity, (pc) => pc.products)
-    @JoinTable()
+    @ManyToMany(() => ColorEntity, (color) => color.products)
+    @JoinTable({ name: "productColors" })
     productColors?: ColorEntity[]
 
     @OneToMany(() => CartItemEntity, (item) => item.product)

@@ -1,5 +1,5 @@
 import { ConfigService } from "@nestjs/config"
-import { FindOptionsRelations, FindOptionsWhere, ILike, Not, Repository } from "typeorm"
+import { FindOneOptions, FindOptionsRelations, FindOptionsWhere, ILike, Not, Repository } from "typeorm"
 import { PaginationFilters } from "../filters/pagination.filters"
 import { PaginatedResult } from "../paginated-result.dto"
 import { SearchFilters } from "../filters/search.filters"
@@ -57,6 +57,11 @@ export abstract class BaseRepository<T extends Object> {
     async findOneBy(where: FindOptionsWhere<T>, options?: optionsType) {
         const find = this.whereoptions(where, options)
         return await this.repo.findOneBy(find as FindOptionsWhere<T>)
+    }
+
+    async findOne(options:FindOneOptions<T>,option?:optionsType){
+        if(options.where) options.where=this.whereoptions(options.where,option)
+        return await this.repo.findOne(options)
     }
 
     async findBy(where: FindOptionsWhere<T>, options?: optionsType) {

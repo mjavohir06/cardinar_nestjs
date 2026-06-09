@@ -1,5 +1,5 @@
 // ImageCreateDto
-import { IsInt, IsString, IsNotEmpty } from "class-validator";
+import { IsInt, IsString, IsNotEmpty, Allow } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
 import { Transform } from "class-transformer";
 
@@ -9,6 +9,7 @@ export class ImageCreateDto {
     @ApiProperty({ type: "number" })
     productId!: number
 
+    @Allow()
     @ApiProperty({ type: "string", format: "binary" })
     image!: string
 
